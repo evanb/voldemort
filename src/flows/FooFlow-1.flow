@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>FooFlow</label>
+    <recordCreates>
+        <name>CreateAccount</name>
+        <label>CreateAccount</label>
+        <locationX>428</locationX>
+        <locationY>293</locationY>
+        <inputAssignments>
+            <field>Description</field>
+            <value>
+                <elementReference>Blah</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Account</object>
+    </recordCreates>
+    <screens>
+        <name>FooScreen</name>
+        <label>FooScreen</label>
+        <locationX>425</locationX>
+        <locationY>193</locationY>
+        <connector>
+            <targetReference>CreateAccount</targetReference>
+        </connector>
+        <fields>
+            <name>Blah</name>
+            <dataType>String</dataType>
+            <fieldText>Blah</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>false</isRequired>
+        </fields>
+    </screens>
+    <startElementReference>FooScreen</startElementReference>
+</Flow>
