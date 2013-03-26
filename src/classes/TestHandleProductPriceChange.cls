@@ -44,7 +44,7 @@ private class TestHandleProductPriceChange {
 		
 		// when I alter the price of the merch
 		products[0].price__c = 20; // raise price
-		//products[1].price__c = 5;  // lower price
+		products[1].price__c = 5;  // lower price
 		Test.startTest();
 		update products;
 		Test.stopTest(); 
@@ -52,7 +52,7 @@ private class TestHandleProductPriceChange {
 		// then the unit price of should have been updated
 		lineItems = [SELECT id, unit_price__c FROM Line_Item__c WHERE id IN :lineItems];
 		System.assert(lineItems[0].unit_price__c == 10);  // unchanged
-		//System.assert(lineItems[1].unit_price__c == 5);   // changed!!
+		System.assert(lineItems[1].unit_price__c == 5);   // changed!!
 		
 	}
 }
